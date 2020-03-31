@@ -9,7 +9,7 @@ size_t STRING_SIZE = 128;
          srand(time(NULL));
          choice--;
          int dealerChoice = rand() % 3;
-         while ((dealerChoice == choice+1) || !strcmp(Doors[dealerChoice], "Car")) {
+         while ((dealerChoice == choice) || !strcmp(Doors[dealerChoice], "Car")) {
             dealerChoice = rand() % 3;
     }
 
