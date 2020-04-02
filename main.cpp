@@ -44,6 +44,7 @@ size_t STRING_SIZE = 128;
             std::cout << "Enter a Valid Number (1, 2, or 3).\n";
             std::cin >> choice;
         }
+        system("cls");
         dealerChoice = dealerReveal(Doors, choice); 
         std::cout << "You chose Door " << choice << " There is a " << Doors[dealerChoice] 
             << " behind Door " << dealerChoice+1 << " Would you like to switch to the other door, " 
@@ -52,7 +53,9 @@ size_t STRING_SIZE = 128;
         while (y_Or_n != 1 && y_Or_n != 2) {
             std::cout << "\nPlease choose a valid selectiong ('1' or '2').\n";
             std::cin >> y_Or_n;
+            system("cls");
         }
+        system("cls");
         if (y_Or_n == 1) {
             for (choice = 0; choice == (tempchoice-1) || choice == dealerChoice; choice++) {};
             std::cout << "You chose to switch to Door " << choice+1
@@ -77,12 +80,14 @@ size_t STRING_SIZE = 128;
         }
     }
 
+    
+
     void Percentage(float* wins, float* losses) {
         float winpercentage, losspercentage;
         float total = *wins + *losses;
         winpercentage = ((*wins) / total) * 100;
         losspercentage = ((*losses) / total) * 100;
-        std::cout << "\nWin Percentage: " << winpercentage << "%";
+        std::cout << "\n\nWin Percentage: " << winpercentage << "%";
         std::cout << "\nLoss Percentage: " << losspercentage << "%";
     }
 
@@ -108,11 +113,11 @@ int main(int argc, char* argv[])
     do {
         shuffle(Doors, 3);
         chooseDoors(Doors, &wins, &losses);
-        std::cout << "\nWins: " << wins;
+        std::cout << "\n\nWins: " << wins;
         std::cout << "\nLosses: " << losses;
         Percentage(&wins, &losses);
         std::cout << "\n\nWould you like to play again?\n"
-            << "Press '1' to quit or '2'to play again: ";
+            << "Press '1' to quit or '2'to playagain: ";
         std::cin >> quit;
         while (quit != 1 && quit != 2) {
             std::cout << "\nChoose a valid selection: ";
